@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EE0DF622A690481002B322F /* TrashboxMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF612A690481002B322F /* TrashboxMemoApp.swift */; };
+		3EE0DF642A690481002B322F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF632A690481002B322F /* ContentView.swift */; };
+		3EE0DF662A690482002B322F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE0DF652A690482002B322F /* Assets.xcassets */; };
+		3EE0DF692A690482002B322F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE0DF682A690482002B322F /* Preview Assets.xcassets */; };
+		3EE0DF732A690482002B322F /* TrashboxMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF722A690482002B322F /* TrashboxMemoTests.swift */; };
+		3EE0DF7D2A690482002B322F /* TrashboxMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF7C2A690482002B322F /* TrashboxMemoUITests.swift */; };
+		3EE0DF7F2A690482002B322F /* TrashboxMemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF7E2A690482002B322F /* TrashboxMemoUITestsLaunchTests.swift */; };
+		3EE0DF8C2A6904BA002B322F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF8B2A6904BA002B322F /* Color.swift */; };
+		3EE0DF902A691F88002B322F /* MemoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF8F2A691F88002B322F /* MemoListItemView.swift */; };
+		3EE0DF932A69212A002B322F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EE0DF952A69212A002B322F /* Localizable.strings */; };
+		3EE0DF992A69234B002B322F /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF982A69234B002B322F /* MemoListView.swift */; };
+		3EE0DF9C2A692957002B322F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF9B2A692957002B322F /* SettingView.swift */; };
+		3EE0DF9E2A693209002B322F /* MemoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF9D2A693209002B322F /* MemoDetailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3EE0DF6F2A690482002B322F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EE0DF562A690481002B322F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EE0DF5D2A690481002B322F;
+			remoteInfo = TrashboxMemo;
+		};
+		3EE0DF792A690482002B322F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EE0DF562A690481002B322F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EE0DF5D2A690481002B322F;
+			remoteInfo = TrashboxMemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3EE0DF5E2A690481002B322F /* TrashboxMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrashboxMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE0DF612A690481002B322F /* TrashboxMemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashboxMemoApp.swift; sourceTree = "<group>"; };
+		3EE0DF632A690481002B322F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3EE0DF652A690482002B322F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3EE0DF682A690482002B322F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3EE0DF6E2A690482002B322F /* TrashboxMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrashboxMemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE0DF722A690482002B322F /* TrashboxMemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashboxMemoTests.swift; sourceTree = "<group>"; };
+		3EE0DF782A690482002B322F /* TrashboxMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrashboxMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE0DF7C2A690482002B322F /* TrashboxMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashboxMemoUITests.swift; sourceTree = "<group>"; };
+		3EE0DF7E2A690482002B322F /* TrashboxMemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashboxMemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3EE0DF8B2A6904BA002B322F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		3EE0DF8F2A691F88002B322F /* MemoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListItemView.swift; sourceTree = "<group>"; };
+		3EE0DF942A69212A002B322F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3EE0DF962A69212E002B322F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3EE0DF972A692130002B322F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3EE0DF982A69234B002B322F /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
+		3EE0DF9B2A692957002B322F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		3EE0DF9D2A693209002B322F /* MemoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EE0DF5B2A690481002B322F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE0DF6B2A690482002B322F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE0DF752A690482002B322F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EE0DF552A690481002B322F = {
+			isa = PBXGroup;
+			children = (
+				3EE0DF602A690481002B322F /* TrashboxMemo */,
+				3EE0DF712A690482002B322F /* TrashboxMemoTests */,
+				3EE0DF7B2A690482002B322F /* TrashboxMemoUITests */,
+				3EE0DF5F2A690481002B322F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3EE0DF5F2A690481002B322F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EE0DF5E2A690481002B322F /* TrashboxMemo.app */,
+				3EE0DF6E2A690482002B322F /* TrashboxMemoTests.xctest */,
+				3EE0DF782A690482002B322F /* TrashboxMemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EE0DF602A690481002B322F /* TrashboxMemo */ = {
+			isa = PBXGroup;
+			children = (
+				3EE0DF612A690481002B322F /* TrashboxMemoApp.swift */,
+				3EE0DF632A690481002B322F /* ContentView.swift */,
+				3EE0DF9A2A692462002B322F /* View */,
+				3EE0DF8D2A691F2E002B322F /* Extension */,
+				3EE0DF8E2A691F3C002B322F /* Asset */,
+				3EE0DF672A690482002B322F /* Preview Content */,
+			);
+			path = TrashboxMemo;
+			sourceTree = "<group>";
+		};
+		3EE0DF672A690482002B322F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3EE0DF682A690482002B322F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3EE0DF712A690482002B322F /* TrashboxMemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3EE0DF722A690482002B322F /* TrashboxMemoTests.swift */,
+			);
+			path = TrashboxMemoTests;
+			sourceTree = "<group>";
+		};
+		3EE0DF7B2A690482002B322F /* TrashboxMemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3EE0DF7C2A690482002B322F /* TrashboxMemoUITests.swift */,
+				3EE0DF7E2A690482002B322F /* TrashboxMemoUITestsLaunchTests.swift */,
+			);
+			path = TrashboxMemoUITests;
+			sourceTree = "<group>";
+		};
+		3EE0DF8D2A691F2E002B322F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3EE0DF8B2A6904BA002B322F /* Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3EE0DF8E2A691F3C002B322F /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				3EE0DF952A69212A002B322F /* Localizable.strings */,
+				3EE0DF652A690482002B322F /* Assets.xcassets */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		3EE0DF9A2A692462002B322F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3EE0DF8F2A691F88002B322F /* MemoListItemView.swift */,
+				3EE0DF982A69234B002B322F /* MemoListView.swift */,
+				3EE0DF9D2A693209002B322F /* MemoDetailView.swift */,
+				3EE0DF9B2A692957002B322F /* SettingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EE0DF5D2A690481002B322F /* TrashboxMemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EE0DF822A690482002B322F /* Build configuration list for PBXNativeTarget "TrashboxMemo" */;
+			buildPhases = (
+				3EE0DF5A2A690481002B322F /* Sources */,
+				3EE0DF5B2A690481002B322F /* Frameworks */,
+				3EE0DF5C2A690481002B322F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrashboxMemo;
+			productName = TrashboxMemo;
+			productReference = 3EE0DF5E2A690481002B322F /* TrashboxMemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3EE0DF6D2A690482002B322F /* TrashboxMemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EE0DF852A690482002B322F /* Build configuration list for PBXNativeTarget "TrashboxMemoTests" */;
+			buildPhases = (
+				3EE0DF6A2A690482002B322F /* Sources */,
+				3EE0DF6B2A690482002B322F /* Frameworks */,
+				3EE0DF6C2A690482002B322F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EE0DF702A690482002B322F /* PBXTargetDependency */,
+			);
+			name = TrashboxMemoTests;
+			productName = TrashboxMemoTests;
+			productReference = 3EE0DF6E2A690482002B322F /* TrashboxMemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3EE0DF772A690482002B322F /* TrashboxMemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EE0DF882A690482002B322F /* Build configuration list for PBXNativeTarget "TrashboxMemoUITests" */;
+			buildPhases = (
+				3EE0DF742A690482002B322F /* Sources */,
+				3EE0DF752A690482002B322F /* Frameworks */,
+				3EE0DF762A690482002B322F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EE0DF7A2A690482002B322F /* PBXTargetDependency */,
+			);
+			name = TrashboxMemoUITests;
+			productName = TrashboxMemoUITests;
+			productReference = 3EE0DF782A690482002B322F /* TrashboxMemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EE0DF562A690481002B322F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3EE0DF5D2A690481002B322F = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					3EE0DF6D2A690482002B322F = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 3EE0DF5D2A690481002B322F;
+					};
+					3EE0DF772A690482002B322F = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 3EE0DF5D2A690481002B322F;
+					};
+				};
+			};
+			buildConfigurationList = 3EE0DF592A690481002B322F /* Build configuration list for PBXProject "TrashboxMemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ja,
+				"zh-Hans",
+			);
+			mainGroup = 3EE0DF552A690481002B322F;
+			productRefGroup = 3EE0DF5F2A690481002B322F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EE0DF5D2A690481002B322F /* TrashboxMemo */,
+				3EE0DF6D2A690482002B322F /* TrashboxMemoTests */,
+				3EE0DF772A690482002B322F /* TrashboxMemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EE0DF5C2A690481002B322F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE0DF692A690482002B322F /* Preview Assets.xcassets in Resources */,
+				3EE0DF932A69212A002B322F /* Localizable.strings in Resources */,
+				3EE0DF662A690482002B322F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE0DF6C2A690482002B322F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE0DF762A690482002B322F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EE0DF5A2A690481002B322F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE0DF9E2A693209002B322F /* MemoDetailView.swift in Sources */,
+				3EE0DF642A690481002B322F /* ContentView.swift in Sources */,
+				3EE0DF902A691F88002B322F /* MemoListItemView.swift in Sources */,
+				3EE0DF622A690481002B322F /* TrashboxMemoApp.swift in Sources */,
+				3EE0DF9C2A692957002B322F /* SettingView.swift in Sources */,
+				3EE0DF992A69234B002B322F /* MemoListView.swift in Sources */,
+				3EE0DF8C2A6904BA002B322F /* Color.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE0DF6A2A690482002B322F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE0DF732A690482002B322F /* TrashboxMemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE0DF742A690482002B322F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE0DF7D2A690482002B322F /* TrashboxMemoUITests.swift in Sources */,
+				3EE0DF7F2A690482002B322F /* TrashboxMemoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3EE0DF702A690482002B322F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EE0DF5D2A690481002B322F /* TrashboxMemo */;
+			targetProxy = 3EE0DF6F2A690482002B322F /* PBXContainerItemProxy */;
+		};
+		3EE0DF7A2A690482002B322F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EE0DF5D2A690481002B322F /* TrashboxMemo */;
+			targetProxy = 3EE0DF792A690482002B322F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3EE0DF952A69212A002B322F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EE0DF942A69212A002B322F /* en */,
+				3EE0DF962A69212E002B322F /* zh-Hans */,
+				3EE0DF972A692130002B322F /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EE0DF802A690482002B322F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3EE0DF812A690482002B322F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3EE0DF832A690482002B322F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TrashboxMemo/Preview Content\"";
+				DEVELOPMENT_TEAM = CH9GHVXXU9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.13an.TrashboxMemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3EE0DF842A690482002B322F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TrashboxMemo/Preview Content\"";
+				DEVELOPMENT_TEAM = CH9GHVXXU9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.13an.TrashboxMemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3EE0DF862A690482002B322F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH9GHVXXU9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.13an.TrashboxMemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrashboxMemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrashboxMemo";
+			};
+			name = Debug;
+		};
+		3EE0DF872A690482002B322F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH9GHVXXU9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.13an.TrashboxMemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrashboxMemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrashboxMemo";
+			};
+			name = Release;
+		};
+		3EE0DF892A690482002B322F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH9GHVXXU9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.13an.TrashboxMemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TrashboxMemo;
+			};
+			name = Debug;
+		};
+		3EE0DF8A2A690482002B322F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH9GHVXXU9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.13an.TrashboxMemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TrashboxMemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EE0DF592A690481002B322F /* Build configuration list for PBXProject "TrashboxMemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE0DF802A690482002B322F /* Debug */,
+				3EE0DF812A690482002B322F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EE0DF822A690482002B322F /* Build configuration list for PBXNativeTarget "TrashboxMemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE0DF832A690482002B322F /* Debug */,
+				3EE0DF842A690482002B322F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EE0DF852A690482002B322F /* Build configuration list for PBXNativeTarget "TrashboxMemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE0DF862A690482002B322F /* Debug */,
+				3EE0DF872A690482002B322F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EE0DF882A690482002B322F /* Build configuration list for PBXNativeTarget "TrashboxMemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE0DF892A690482002B322F /* Debug */,
+				3EE0DF8A2A690482002B322F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EE0DF562A690481002B322F /* Project object */;
+}

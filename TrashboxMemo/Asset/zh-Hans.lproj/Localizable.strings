@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  TrashboxMemo
+
+  Created by 13an on 2023/07/20.
+  
+*/
+
+"Memo" = "Memo";
+"Setting" = "Setting";
+"Create" = "Create";
+
+"Color Theme" = "Color Theme";
+"Language" = "Language";
+"Close" = "Close";

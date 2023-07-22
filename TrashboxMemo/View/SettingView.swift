@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct SettingView: View {
     @Binding var colorTheme: ColorTheme
     @Environment(\.presentationMode) var presentationMode
     @AppStorage(wrappedValue: 0, "appearanceMode") var appearanceMode
+    @StateObject private var hapticEngine = HapticEngine()
     
     var body: some View {
         VStack {
@@ -27,6 +29,13 @@ struct SettingView: View {
 
                     }
                     .pickerStyle(SegmentedPickerStyle())
+                    .onAppear {
+                        hapticEngine.prepareHaptics()
+                    }
+                    .onChange(of: colorTheme) { segment in
+                        hapticEngine.hapticFeedbackLightDouble()
+                    }
+                    .environmentObject(hapticEngine)
                     .padding()
                 }
                 .listRowBackground(colorTheme.surface_1)
@@ -41,6 +50,10 @@ struct SettingView: View {
                             .tag(2)
                     }
                     .pickerStyle(SegmentedPickerStyle())
+                    .onAppear {hapticEngine.prepareHaptics()}
+                    .onChange(of: appearanceMode) { segment in hapticEngine.hapticFeedbackLightDouble()
+                    }
+                    .environmentObject(hapticEngine)
                     .padding()
                 }
                 .listRowBackground(colorTheme.surface_1)
@@ -48,14 +61,34 @@ struct SettingView: View {
             .foregroundColor(colorTheme.text_base_2)
             .scrollContentBackground(.hidden)
 
-            Button(action: {presentationMode.wrappedValue.dismiss()}) {
-                Text("Close")
-                    .foregroundColor(colorTheme.text_accent_1)
-                    .fontWeight(.black)
+            Button("Close") {
+                hapticEngine.prepareHaptics()
+                presentationMode.wrappedValue.dismiss()
+                hapticEngine.hapticFeedbackLight()
             }
+            .foregroundColor(colorTheme.text_accent_1)
+            .fontWeight(.black)
+            .buttonStyle(.bordered)
+            .font(.system(size: 20, weight: .bold))
+            .padding()
         }
         .background(colorTheme.background_1)
     }
+    
+//    private func getSelectedSegmentView(_ index: Int) -> some View {
+//        switch index {
+//            case 0:
+//                return AnyView(TextCatalog())
+//            case 1:
+//                return AnyView(ImageCatalog())
+//            case 2:
+//                return AnyView(VideoCatalog())
+//            case 3:
+//                return AnyView(HapticsView())
+//            default:
+//                return AnyView(EmptyView())
+//            }
+//    }
 }
 
 enum AppearanceModeSetting: Int {

@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct ContentView: View {
     @State private var colorTheme: ColorTheme = .white
     @State private var selectedLanguageIndex = 0
+    @EnvironmentObject private var hapticEngine: HapticEngine
+
     
     var body: some View {
         MemoListView(colorTheme: $colorTheme)
+            .onAppear {
+                hapticEngine.prepareHaptics()
+            }
     }
 }
 

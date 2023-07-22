@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct MemoListView: View {
     @Binding var colorTheme: ColorTheme
     @State private var isSettingViewPresented = false
+    @StateObject private var hapticEngine = HapticEngine()
     
     var body: some View {
         NavigationView {
@@ -20,12 +22,31 @@ struct MemoListView: View {
                         .font(.system(size: 64, weight: .bold))
                         .padding(24)
                         .foregroundColor(colorTheme.text_base_1)
+                        .onAppear {
+                            hapticEngine.prepareHaptics()
+                        }
+                        .onLongPressGesture(minimumDuration: 0.1, maximumDistance: .infinity, pressing: { pressing in
+                                        if pressing {
+                                            // 指が触れた瞬間のアクションをここに記述
+                                            print("Tapped!")
+                                            hapticEngine.hapticFeedbackLight()
+                                        }
+                                    }, perform: {})
+                    
                     VStack {
-                        NavigationLink {
-                            MemoDetailView(colorTheme: $colorTheme)
-                        } label: {
+                        NavigationLink(destination: MemoDetailView(colorTheme: $colorTheme)) {
                             MemoListItemView(colorTheme: $colorTheme)
                                 .cornerRadius(16)
+                                .onAppear {
+                                    hapticEngine.prepareHaptics()
+                                }
+                                .onLongPressGesture(minimumDuration: 0.1, maximumDistance: .infinity, pressing: { pressing in
+                                                if pressing {
+                                                    // 指が触れた瞬間のアクションをここに記述
+                                                    print("Tapped!")
+                                                    hapticEngine.hapticFeedbackLight()
+                                                }
+                                            }, perform: {})
                         }
                         NavigationLink {
                             MemoDetailView(colorTheme: $colorTheme)
@@ -68,6 +89,8 @@ struct MemoListView: View {
                     Button("Setting") {
                         isSettingViewPresented.toggle()
                     }
+                    .onAppear(perform: hapticEngine.prepareHaptics)
+                    .onTapGesture(perform: hapticEngine.hapticFeedbackLight)
                     .sheet(isPresented: $isSettingViewPresented) {
                         SettingView(colorTheme: $colorTheme)
                     }

@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct MemoListItemView: View {
     @Binding var colorTheme: ColorTheme
     @State private var selectedLanguageIndex = 0
+    @StateObject private var hapticEngine = HapticEngine()
     
     var body: some View {
         VStack(alignment: .leading) {

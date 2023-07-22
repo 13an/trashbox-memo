@@ -20,6 +20,7 @@
 		3EE0DF992A69234B002B322F /* MemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF982A69234B002B322F /* MemoListView.swift */; };
 		3EE0DF9C2A692957002B322F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF9B2A692957002B322F /* SettingView.swift */; };
 		3EE0DF9E2A693209002B322F /* MemoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF9D2A693209002B322F /* MemoDetailView.swift */; };
+		3EE0DFA02A6BBEEA002B322F /* HaticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF9F2A6BBEEA002B322F /* HaticEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		3EE0DF982A69234B002B322F /* MemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListView.swift; sourceTree = "<group>"; };
 		3EE0DF9B2A692957002B322F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		3EE0DF9D2A693209002B322F /* MemoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailView.swift; sourceTree = "<group>"; };
+		3EE0DF9F2A6BBEEA002B322F /* HaticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaticEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				3EE0DF8D2A691F2E002B322F /* Extension */,
 				3EE0DF8E2A691F3C002B322F /* Asset */,
 				3EE0DF672A690482002B322F /* Preview Content */,
+				3EE0DF9F2A6BBEEA002B322F /* HaticEngine.swift */,
 			);
 			path = TrashboxMemo;
 			sourceTree = "<group>";
@@ -163,8 +166,8 @@
 		3EE0DF9A2A692462002B322F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3EE0DF8F2A691F88002B322F /* MemoListItemView.swift */,
 				3EE0DF982A69234B002B322F /* MemoListView.swift */,
+				3EE0DF8F2A691F88002B322F /* MemoListItemView.swift */,
 				3EE0DF9D2A693209002B322F /* MemoDetailView.swift */,
 				3EE0DF9B2A692957002B322F /* SettingView.swift */,
 			);
@@ -307,6 +310,7 @@
 				3EE0DF9E2A693209002B322F /* MemoDetailView.swift in Sources */,
 				3EE0DF642A690481002B322F /* ContentView.swift in Sources */,
 				3EE0DF902A691F88002B322F /* MemoListItemView.swift in Sources */,
+				3EE0DFA02A6BBEEA002B322F /* HaticEngine.swift in Sources */,
 				3EE0DF622A690481002B322F /* TrashboxMemoApp.swift in Sources */,
 				3EE0DF9C2A692957002B322F /* SettingView.swift in Sources */,
 				3EE0DF992A69234B002B322F /* MemoListView.swift in Sources */,

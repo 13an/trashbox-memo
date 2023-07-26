@@ -13,101 +13,73 @@ struct MemoListView: View {
     @State private var isSettingViewPresented = false
     @StateObject private var hapticEngine = HapticEngine()
     
+    
+    
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    Text("Memo")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.system(size: 64, weight: .bold))
-                        .padding(24)
-                        .foregroundColor(colorTheme.text_base_1)
-                        .onAppear {
-                            hapticEngine.prepareHaptics()
+        NavigationStack {
+                List(memos) { memo in
+                    ZStack {
+                        NavigationLink(value: memo) {
+                            EmptyView()
                         }
-                        .onLongPressGesture(minimumDuration: 0.1, maximumDistance: .infinity, pressing: { pressing in
-                                        if pressing {
-                                            // 指が触れた瞬間のアクションをここに記述
-                                            print("Tapped!")
-                                            hapticEngine.hapticFeedbackLight()
-                                        }
-                                    }, perform: {})
-                    
-                    VStack {
-                        NavigationLink(destination: MemoDetailView(colorTheme: $colorTheme)) {
-                            MemoListItemView(colorTheme: $colorTheme)
-                                .cornerRadius(16)
-                                .onAppear {
-                                    hapticEngine.prepareHaptics()
-                                }
-                                .onLongPressGesture(minimumDuration: 0.1, maximumDistance: .infinity, pressing: { pressing in
-                                                if pressing {
-                                                    // 指が触れた瞬間のアクションをここに記述
-                                                    print("Tapped!")
-                                                    hapticEngine.hapticFeedbackLight()
-                                                }
-                                            }, perform: {})
-                        }
-                        NavigationLink {
-                            MemoDetailView(colorTheme: $colorTheme)
-                        } label: {
-                            MemoListItemView(colorTheme: $colorTheme)
-                                .cornerRadius(16)
-                        }
-                        NavigationLink {
-                            MemoDetailView(colorTheme: $colorTheme)
-                        } label: {
-                            MemoListItemView(colorTheme: $colorTheme)
-                                .cornerRadius(16)
-                        }
-                        NavigationLink {
-                            MemoDetailView(colorTheme: $colorTheme)
-                        } label: {
-                            MemoListItemView(colorTheme: $colorTheme)
-                                .cornerRadius(16)
-                        }
-                        NavigationLink {
-                            MemoDetailView(colorTheme: $colorTheme)
-                        } label: {
-                            MemoListItemView(colorTheme: $colorTheme)
-                                .cornerRadius(16)
-                        }
-                        NavigationLink {
-                            MemoDetailView(colorTheme: $colorTheme)
-                        } label: {
-                            MemoListItemView(colorTheme: $colorTheme)
-                                .cornerRadius(16)
-                        }
+                        .opacity(0.0)
                         
+                        MemoListItemView(colorTheme: $colorTheme, memo: memo)
+                            .cornerRadius(16)
+                            .frame(maxWidth: .infinity)
                     }
-                    .padding(16)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(colorTheme.background_1)
                 }
-            }
-            .background(colorTheme.background_1)
-            .toolbar {
-                ToolbarItem {
-                    Button("Setting") {
-                        isSettingViewPresented.toggle()
+                .listRowBackground(colorTheme.background_1)
+                .background(colorTheme.background_1)
+                .listStyle(GroupedListStyle())
+                .navigationDestination(for: Memo.self, destination: { memo in
+                    MemoDetailView(colorTheme: $colorTheme, memo: memo)
+                })
+                .navigationTitle("Memo")
+                .toolbar {
+                    ToolbarItem {
+                        Button("Setting") {
+                            isSettingViewPresented.toggle()
+                        }
+                        .onAppear(perform: hapticEngine.prepareHaptics)
+                        .onTapGesture(perform: hapticEngine.hapticFeedbackLight)
+                        .sheet(isPresented: $isSettingViewPresented) {
+                            SettingView(colorTheme: $colorTheme)
+                        }
+                        .foregroundColor(colorTheme.text_accent_1)
+                        .fontWeight(.black)
                     }
-                    .onAppear(perform: hapticEngine.prepareHaptics)
-                    .onTapGesture(perform: hapticEngine.hapticFeedbackLight)
-                    .sheet(isPresented: $isSettingViewPresented) {
-                        SettingView(colorTheme: $colorTheme)
+                    ToolbarItem {
+                        Button("Create") {
+                            
+                        }
+                        .foregroundColor(colorTheme.text_accent_1)
+                        .fontWeight(.black)
                     }
-                    .foregroundColor(colorTheme.text_accent_1)
-                    .fontWeight(.black)
                 }
-                ToolbarItem {
-                    Button("Create") {
-                        
-                    }
-                    .foregroundColor(colorTheme.text_accent_1)
-                    .fontWeight(.black)
-                }
-            }
         }
+        .background(colorTheme.background_1)
+        .scrollContentBackground(.hidden)
+            
+//            Text("Memo")
+//                .frame(maxWidth: .infinity, alignment: .leading)
+//                .font(.system(size: 64, weight: .bold))
+//                .padding(24)
+//                .foregroundColor(colorTheme.text_base_1)
+        
     }
+    
+    @State private var memos = [
+        Memo(title: "How To Be Successful - Sam Altman", content: "I’ve observed thousands of founders and thought a lot about what it takes to make a huge amount of money or to create something important. Usually, people start off wanting the former and end up wanting the latter.\nHere are 13 thoughts about how to achieve such outlier success. Everything here is easier to do once you’ve already reached a baseline degree of success (through privilege or effort) and want to put in the work to turn that into outlier success. [1] But much of it applies to anyone. \n\n1. Compound yourself Compounding is magic.\nLook for it everywhere. Exponential curves are the key to wealth generation.\nA medium-sized business that grows 50% in value every year becomes huge in a very short amount of time. Few businesses in the world have true network effects and extreme scalability. But with technology, more and more will. It’s worth a lot of effort to find them and create them. You also want to be an exponential curve yourself—you should aim for your life to follow an ever-increasing up-and-to-the-right trajectory. It’s important to move towards a career that has a compounding effect—most careers progress fairly linearly.\nYou don't want to be in a career where people who have been doing it for two years can be as effective as people who have been doing it for twenty—your rate of learning should always be high. As your career progresses, each unit of work you do should generate more and more results. There are many ways to get this leverage, such as capital, technology, brand, network effects, and managing people.   It’s useful to focus on adding another zero to whatever you define as your success metric—money, status, impact on the world, or whatever. I am willing to take as much time as needed between projects to find my next thing. But I always want it to be a project that, if successful, will make the rest of my career look like a footnote.\nMost people get bogged down in linear opportunities. Be willing to let small opportunities go to focus on potential step changes.\nI think the biggest competitive advantage in business—either for a company or for an individual’s career—is long-term thinking with a broad view of how different systems in the world are going to come together. One of the notable aspects of compound growth is that the furthest out years are the most important. In a world where almost no one takes a truly long-term view, the market richly rewards those who do.\nTrust the exponential, be patient, and be pleasantly surprised."),
+        Memo(title: "Good vs Great | (Not Boring) Software", content: "Good design is usable.\nGreat design challenges.\n\nGood design solves problems.\nGreat design enriches the soul.\n\nGood design is functional.\nGreat design is fulfilling.\n\nGood design is invisible.\nGreat design is in your face.\n\nGood design is good process.\nGreat design is usually messy.\n\nGood design is familiar.\nGreat design is uncomfortable.\n\nGood design optimizes.\nGreat design discovers.\n\nGood design is consistent.\nGreat design is unexpected.\n\nGood design follows patterns.\nGreat design sets the new patterns.\n\nGood design is understandable.\nGreat design opens new vistas.\n\nGood design is clear.\nGreat design leaves room for interpretation.\n\nGood design gets out of the way.\nGreat design has something to say.\n\nGood design is for all.\nGreat design is for you.\n\nWhen you're done with Good… aim for Great."),
+        Memo(title: "Building a Belief System | (Not Boring) Software", content: "Back in the simpler times of February 2020, I took time to step away from screens for a bit to make something physical. At the top of my list was to make a clock that my kids (ages 3 & 5) could read for themselves.\nUnderstanding time is simple until you try to teach it to a toddler. Digital clocks are too abstract and analog clocks require a challenging combination of math, visual memory, and abstract thinking—three hands that indicate different magnitudes of time, am/pm for different parts of the day, and minutes that need to be multiplied by 5 to get a factor of 60. It's challenging enough that it's used as a [mental aptitude test for dementia](https://www.dementiacarecentral.com/alzheimers-clock-test/). It turns out, reading a clock isn't that simple after all, we've just become accustomed to it.\nThere's the saying that most inventions are born from laziness, and this was no exception. I wasn't going to wait the years needed for my kids to learn multiplication just to know the time. I just wanted them to stop constantly asking me if it was their bedtime.  ### The moment you realize nothing is ever done.  I thought about what I would do for a long time—always churning in the back of my head. The approach I landed on was to simplify the clock from 3 hands down to just 1 and to get rid of am/pm by using a 24-hour movement to map closer to the daily rotation of the earth. Perhaps most importantly, I placed a small dot next to their bedtime hour. Now knowing bedtime was as simple as seeing if the hand had passed the dot or not. It took two days to build, and you can [read more about the process here →](https://twitter.com/asallen/status/1235268950482513920)  No matter how much confidence you may have in your design, it's always a completely magical experience to see it actually working in the real world. I'm not exaggerating—my kids went from constantly asking me about the time to telling me the time themselves in the span of a day.\nI shared the design on social, and to my surprise, other parents and non-parents jumped on to the idea as well.\n\n### Three Lessons from Building a Clock\nThat process of designing something that solved a personal problem and then seeing its direct impact on those around me taught me three things that formed the core belief system of ANDY:\n### 1\nI started small. It was for me and my kids. Start with a product/market fit of one. Don't worry about your TAM. When we first built Paper, there were innovations like watercolor and undo gestures that no one was asking for—I simply wanted them for myself. Make your work personal. In doing that, you'll find something that others can connect more deeply with.\nLesson: Great things start small.\n\n### 2\nI built the clock for my kids, but what I didn't expect was how it would change my own behavior. I found the new design made knowing the time a little easier for me as it eliminated small moments of friction I wasn't even aware of (see [universal design](https://www.washington.edu/doit/what-universal-design-0)). I enjoyed staring at the clock envisioning how the hours of the day might play out.\nThis was not a new problem. The modern clock has been around for hundreds of years. If something as commonplace as a clock can be questioned, what else is up for grabs?  Lesson: We're not done yet.\n\n### 3\nI've been fortunate to work with great teams designing many amazing things over the years that earned some of the major design awards. But of all the things I've worked on, this simple clock is the one that I use the most… by far. I still use Paper once a week and Paste every couple weeks. But I look at this clock 20 or more times a day. It's the one thing I've designed that has most shaped my own experience.  Since then, I've become transfixed with re-thinking the small things that lightly touch and shape our everyday lives. And it's an area that I think is vastly overlooked by our fast-moving industry.\nLesson: Design for small everyday moments.  ### Great Design is About Values  The biggest mistake I see designers make when building a brand for their company, a culture for their team, or foundation for their product is to focus on *principles*. They pile together a few basic words like: Simple, Helpful, Beautiful, Intentional. Guess who else shares these principles? Everyone.\nPrinciples are universal truths. They apply to everything, and thus, are useless in distinguishing who you are. You need to dig deeper and find what makes you you. You need to know your values. While principles are universal, values are personal.\nA simple test is to formulate the opposing value. If your value is ”Simplicity” then the opposing value is ”Complexity”. Who out there is aiming for their product to be ”complex”? Who is building a ”stagnant” company that is so different from your ”innovative” company? If your opposing value isn't a meaningful position by anyone else in your industry, then it's useless. Find what makes you unique—what cuts against the common narrative. And the smaller that circle of believers is for your value, the more potent it becomes for you. Don't look for universal truths, look for unifying beliefs.\n\n### From Values to Belief System\nWhat struck me about the lessons I learned building a clock was how these cut against the common narrative in the tech industry today: designing for individuals rather than scale, targeting small moments rather than world change, revisiting everyday known problems rather than seeking out new ones.\nWhile the lessons are fresh, the values they reflect go back to the beginning for me. From filmmaking to Paper to furniture, the arc hasn't changed. I can trace every value I have as a creator back to experiences I had growing up as a kid on the tundra of rural Alaska. And I'm not special—we all have powerful unique personal experiences and interesting values if we just dig a little deeper. Imagine building products around these rather pulling the standard ones off the shelf.\n\n### Andy Belief System\nWe call it a belief system because it's more than a collection of values. It's how we see the world and what is missing.\n\n1. **Make stuff you use every day**—it makes for a better life.\n2. **Make it better**—do less if you need to.\n3. **Nothing is finished**—everything can be rethought.\n4. **Think small**—make one small part of the world as it should be.\n5. **Slow down**—put in the time & go deeper.\n6. **Honor the materials**—play to a platform's strengths.\n7. **Feel each moment**—it needs to be more than functional.\n8. **Make it personal**—put yourself out there.\n9. **Have opinions**—take a side or create your own.\n10. **It doesn't have to be easy**—people love a challenge.\n11. **It’s not for everyone**—you're gonna have haters.\n12. **Never boring.**"),
+        Memo(title: "No More Boring Apps | (Not Boring) Software", content: "In 1970, at age 39, painter [John Baldessari](https://www.shortoftheweek.com/2012/05/16/a-brief-history-of-john-baldessari/) took his entire life's work of rather average landscape paintings, lit it ablaze, and watched decades of work burn to ash. He followed with a long film of him repeating a statement that hit the art world: ”I will not make any more boring art. I will not make any more boring art…” Baldessari then went on to produce some of the 20th century's seminal visual and conceptual art that has influenced entire new generations of artists.\n\n### I\n### Product Design sits at this same moment today.\nI've been in this field for a bit. I've worked for some big companies and started a couple of my own ([FiftyThree](https://www.fiftythree.com/), [Short of the Week](https://www.shortoftheweek.com/)). I've watched apps go from a creative side hobby to big business. I've watched Product Design grow from a small, nameless circle of misfits to one of the largest creative fields today ([238,000 in the US](https://www.springboard.com/blog/ux-designer-salary-guide/)). Every day millions of new dollars are invested, hundreds of new apps are launched, and the world is becoming a better place one convenience at a time. Apps have become an intimate part of our everyday lives. We wake up with them, eat with them, pee with them, and go to bed with them. Software has eaten the world, and many seem ready to hail this as the golden age of Design.  And it's time to burn it all.\nThe world of apps—once an exciting canvas for creative exploration—has become repetitive, predictable, and… boring.\n\n### Seriously, I can't tell one app from the next.\nThere was that one hot app from a couple weeks ago that everyone was raving about—but I don't remember it anymore. Just this week, there was a new email app, a new metrics dashboard, and a new bookmarking app. They are all destined to disappear into a sea of apps following the same formula—designed with the same boring templates, built with the same boring frameworks, promoted on the same boring landing page design with that same boring tone of voice. What we get are apps with the same generic and completely forgettable design promising to change our lives by making some small part of it a tiny bit easier. Product design has become overly formulaic and the apps we make entirely uninspired. Is this the end game?\n\n### I used to think it was just me.\nThen I started to notice something. I've started asking my product design friends where they find inspiration, and I hear a lot about great architecture, graphic design, photography, video games, film, and art. But no one mentions any apps. Seems odd, don't you think?\nYou can try it yourself with a slightly different question. Ask a product designer to name a few of their Design heroes. You're likely to hear names like Dieter Rams, Paula Scher, Vignelli, and Buckminster Fuller. What you're unlikely to hear are the names of anyone designing any software.\nSure, we're a young discipline, but so are video games. And you won't find a game designer who can't rattle off names like [Miyamoto](https://en.wikipedia.org/wiki/Shigeru_Miyamoto), [Hideo Kojima](http://www.kojimaproductions.jp/en/), or [Arnt Jenson](https://playdead.com/) as well as name a dozen titles that deeply shaped their childhood.\nSomething is off. This simply isn't an issue you find in other design fields like industrial design, fashion, or architecture. Despite being perhaps the largest professional creative field today, Product Design seems to be missing something fundamental that exists in every other design field.\n\n### II\n### I almost stepped away.  To be honest, a couple years ago, I was ready to walk away from it all. I watched many of my friends leave Design to reconnect with the world. Usually that meant going out into nature for a long hike or to build a cabin.  I grew up in Alaska, so… I moved out to Seattle and started building furniture.  Woodworking is brutal. It's painfully slow to learn and very unforgiving. But the sheer act of jumping blindly into a new creative field as a novice really opened up my eyes. You'd be surprised how quickly designing a simple bench will lead you into existential questions about the nature of ”sitting.”\n\n### Ever wonder why there are so many chair designs?\nI did. You'd think after thousands of years and millions of iterations, we'd have solved the problem of sitting. And yet, every year a new, bold chair is unveiled that would put a new iPhone iteration to shame.  There's a simple lesson we all learned a long time ago. It turns out, there isn't one chair for everyone. There are many chairs for different people in different situations with different values. There are lounge chairs, task chairs, benches, stools, poufs all serving a unique purpose. And if I were to go looking for a new lounge chair, I could buy a La-Z-Boy, an Eames lounge chair, or Saarinen's womb chair. A chair solves a simple need with a diversity of viewpoints.  How is it that our apps, which tackle issues that are infinitely more complex than ”sitting”—issues like ”human connection”—offer so much less depth and diversity?  ### III  ### All about that growth.  To understand Product Design, you need to understand the tech industry.  The underlying appeal in software as a business is *scale*. With zero marginal costs, you can build your product just once and put it in the hands of billons. The goal is scale, and the strategy is growth.\nBut this strategy of endless growth cuts against one of the fundamental principles in Design.\n\n### Let's look at beer.  In the US beer industry, the most popular beers by sales are domestic beers which are typically extremely light lagers. They can be made cheaply, quickly and are optimized to be as ”drinkable” as possible (interestingly, it's a market dominated by two players). Then, there's a craft beer market where smaller brewers explore new flavors targeted toward regional customers.  The world of apps today is entirely domestic beers. Every app is designed to appeal to everyone. Which is another way of saying they're designed so as to not offend anyone.\nNow, it's easy to understand why the big tech companies pursue scale. But what boils my mind, is that every small startup has seemingly set the same strategic goal for itself. First, offering some slightly more convenient solution to an ever more-minor problem, and then, with funding secured, attempt to apply that problem to the entire world. We've given up on ”flavor” in pursuit of ”drinkable”. \nWhen you design something to work for everyone, you make it special for no one.  ### But it doesn't have to be this way.\nThe strategy of scale is stunting the Product Design field. I've watched it corrupt teams as design values that were once ”delight” slowly morph into ”performs” even if not explicitly stated. I suspect, deep down, many of us know this, but simply can't find a way to square it.\nAs important as knowing what your product is, is knowing what it is *not* and that starts with recognizing that your business is not the same as Apple or Google. Stop playing their game.\nThe big domestic beer makers draw their inspiration from the craft brewers. There are styles and flavors that a small brewer can explore that a massive industrial brewer never could. The big clothing brands are inspired by the small fashion boutiques. Blockbuster directors find inspiration in indie and short films.\nIf you're small, you're in a position where it's to your advantage to be weird—you can have a point of view that the big tech companies never could. In the world of chairs—you're not going to build a cheaper chair than Ikea. Why not build something they couldn't—like a more interesting one?\nFor me, this thinking begins to answer the question of what is missing the product design field. It opens up the medium of software as a platform for something bigger than solving problems.\nWhy do furniture designers keep designing new chairs? We know it's not to solve the problem of ”sitting.” The chair is simply the medium. The true goal is something bigger—to inspire, to broaden our understanding of what's possible, or express something unique about what it means to be alive today.  Imagine if our everyday apps embraced this? What might we see? I get goosebumps just writing about it.\n\n### IV\n### We missed the point. We're supposed to be dancing.\nPerhaps it's part of maturing, but I'm at a point in my life where I don't want more—I want better.\nWhen I use your app, I don't want to see your company's KPI. I want to see your point of view. The world should know that *you* made it. People should feel your passion vibrating off the screen.\nI want us to collectively raise the bar for what we expect from our digital experiences. Life isn't just a series of problems to be solved but moments to be lived. As we find ourselves spending more and more of our time in the digital world—especially now—we should expect that world to inspire, surprise, and dare I say, even challenge us. We are lucky to be versed in a creative field where we can dream up magical things that can touch the lives of billons. Like other design fields, we should see the work of product design as more than a business optimizer but as a powerful vehicle for expressing ideas that can push culture forward.\nI know there are many Designers out there with something to say. If where you work won't let you say it, leave, and find someplace that will. And if you can't find someplace that will, start it yourself.\nThat's what I did.\nI left a perfectly comfortable job to start ANDY WORKS to rethink the role of Design in our digital lives—starting with something as small as an app. The larger hope is to uncover an alternative way that products, and even businesses, can be built. Join me?\nI will not use any more boring apps.\nI will not use any more boring apps.\nI will not use any more boring apps.\nI will not use any more boring apps.\nI will not use any more boring apps.\nI will not use any more boring apps.")
+    ]
 }
+
+
 
 struct MemoListView_Previews: PreviewProvider {
     static var previews: some View {

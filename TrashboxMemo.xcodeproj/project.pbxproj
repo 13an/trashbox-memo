@@ -21,6 +21,7 @@
 		3EE0DF9C2A692957002B322F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF9B2A692957002B322F /* SettingView.swift */; };
 		3EE0DF9E2A693209002B322F /* MemoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF9D2A693209002B322F /* MemoDetailView.swift */; };
 		3EE0DFA02A6BBEEA002B322F /* HaticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0DF9F2A6BBEEA002B322F /* HaticEngine.swift */; };
+		3EE495922A70DFD0000E045A /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE495912A70DFD0000E045A /* Memo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		3EE0DF9B2A692957002B322F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		3EE0DF9D2A693209002B322F /* MemoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailView.swift; sourceTree = "<group>"; };
 		3EE0DF9F2A6BBEEA002B322F /* HaticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaticEngine.swift; sourceTree = "<group>"; };
+		3EE495912A70DFD0000E045A /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				3EE0DF8E2A691F3C002B322F /* Asset */,
 				3EE0DF672A690482002B322F /* Preview Content */,
 				3EE0DF9F2A6BBEEA002B322F /* HaticEngine.swift */,
+				3EE495912A70DFD0000E045A /* Memo.swift */,
 			);
 			path = TrashboxMemo;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				3EE0DFA02A6BBEEA002B322F /* HaticEngine.swift in Sources */,
 				3EE0DF622A690481002B322F /* TrashboxMemoApp.swift in Sources */,
 				3EE0DF9C2A692957002B322F /* SettingView.swift in Sources */,
+				3EE495922A70DFD0000E045A /* Memo.swift in Sources */,
 				3EE0DF992A69234B002B322F /* MemoListView.swift in Sources */,
 				3EE0DF8C2A6904BA002B322F /* Color.swift in Sources */,
 			);
